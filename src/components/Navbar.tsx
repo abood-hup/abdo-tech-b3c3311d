@@ -9,6 +9,7 @@ const Navbar = () => {
     { name: "من أنا", href: "#about" },
     { name: "خدماتي", href: "#services" },
     { name: "أعمالي", href: "#portfolio" },
+    { name: "عرض سعر", href: "#quote" },
     { name: "اتصل بي", href: "#contact" },
   ];
 

@@ -2,7 +2,11 @@ import { Code2, Database, Smartphone, Globe, Award, Users } from "lucide-react";
 
 const About = () => {
   const skills = [
+    { name: "HTML", level: 98 },
+    { name: "CSS", level: 95 },
+    { name: "JavaScript", level: 92 },
     { name: "Python", level: 90 },
+    { name: "C#", level: 88 },
     { name: "Java", level: 85 },
     { name: "PHP", level: 88 },
     { name: "Flutter", level: 82 },

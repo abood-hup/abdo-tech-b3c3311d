@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 220 15% 8%;
+    /* Core Brand Colors - Soft & Calm */
+    --background: 220 20% 98%;
+    --foreground: 220 20% 12%;
     
-    /* Professional Tech Palette */
-    --primary: 220 100% 15%;
+    /* Soft Professional Palette */
+    --primary: 220 30% 25%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 220 100% 25%;
+    --primary-glow: 220 25% 35%;
     
-    /* Cyan Tech Accent */
-    --accent: 180 100% 50%;
-    --accent-foreground: 220 100% 15%;
-    --accent-soft: 180 100% 95%;
+    /* Soft Blue-Green Accent */
+    --accent: 200 40% 45%;
+    --accent-foreground: 0 0% 98%;
+    --accent-soft: 200 30% 95%;
     
-    /* Professional Grays */
-    --secondary: 220 10% 96%; 
-    --secondary-foreground: 220 15% 8%;
+    /* Soft Grays */
+    --secondary: 220 15% 94%; 
+    --secondary-foreground: 220 20% 15%;
     
-    --muted: 220 10% 94%;
-    --muted-foreground: 220 8% 45%;
+    --muted: 220 12% 92%;
+    --muted-foreground: 220 10% 40%;
     
     /* Card System */
     --card: 0 0% 100%;
@@ -43,15 +43,15 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
-    /* Professional Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 100% 15%), hsl(220 100% 25%));
-    --gradient-accent: linear-gradient(135deg, hsl(180 100% 50%), hsl(180 100% 60%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 10% 98%));
+    /* Soft Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 30% 25%), hsl(220 25% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(200 40% 45%), hsl(200 35% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 20% 98%), hsl(220 15% 96%));
     
-    /* Professional Shadows */
-    --shadow-professional: 0 4px 25px -5px hsl(220 100% 15% / 0.1);
-    --shadow-accent: 0 8px 32px -8px hsl(180 100% 50% / 0.3);
-    --shadow-elegant: 0 20px 40px -10px hsl(220 100% 15% / 0.15);
+    /* Soft Shadows */
+    --shadow-professional: 0 4px 20px -5px hsl(220 30% 25% / 0.08);
+    --shadow-accent: 0 8px 25px -8px hsl(200 40% 45% / 0.15);
+    --shadow-elegant: 0 15px 35px -10px hsl(220 30% 25% / 0.12);
     
     /* Smooth Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
