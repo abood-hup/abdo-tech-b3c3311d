@@ -22,17 +22,17 @@ const Hero = () => {
       <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-accent/10 rounded-full blur-2xl"></div>
       
       {/* Floating Icons */}
-      <div className="absolute top-32 right-20 p-4 bg-card/10 backdrop-blur-sm rounded-xl border border-accent/10 animate-bounce" style={{animationDelay: '0.5s'}}>
+      <div className="absolute top-40 right-20 p-4 bg-card/10 backdrop-blur-sm rounded-xl border border-accent/10 animate-bounce" style={{animationDelay: '0.5s'}}>
         <Code2 className="h-8 w-8 text-accent/60" />
       </div>
-      <div className="absolute bottom-32 left-20 p-3 bg-card/10 backdrop-blur-sm rounded-full border border-primary/10 animate-bounce" style={{animationDelay: '1.5s'}}>
+      <div className="absolute bottom-40 left-20 p-3 bg-card/10 backdrop-blur-sm rounded-full border border-primary/10 animate-bounce" style={{animationDelay: '1.5s'}}>
         <Sparkles className="h-6 w-6 text-primary/60" />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-slide-up">
           {/* Profile Image */}
-          <div className="relative inline-block group mt-8">
+          <div className="relative inline-block group mt-16">
             <div className="absolute -inset-4 bg-gradient-to-r from-accent to-primary rounded-full blur opacity-30 group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
             <div className="relative w-48 h-48 mx-auto rounded-full overflow-hidden shadow-elegant border-4 border-white/20 backdrop-blur-sm">
               <img 

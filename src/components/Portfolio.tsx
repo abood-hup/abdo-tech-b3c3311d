@@ -105,7 +105,7 @@ const Portfolio = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-80 group-hover:opacity-70 transition-opacity duration-300`}></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-background/50 to-background/30 opacity-80 group-hover:opacity-70 transition-opacity duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-white text-6xl opacity-30">
                     {project.icon}

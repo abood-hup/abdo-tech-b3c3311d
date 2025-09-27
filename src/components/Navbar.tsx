@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Code2 } from "lucide-react";
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,11 +36,13 @@ const Navbar = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
+            <ThemeToggle />
             <button className="btn-hero">ابدأ مشروعك</button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2 rtl:space-x-reverse">
+            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg hover:bg-muted transition-all duration-300 ease-out"
