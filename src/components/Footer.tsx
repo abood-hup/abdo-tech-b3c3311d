@@ -89,11 +89,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 rtl:space-x-reverse text-primary-foreground/80">
                 <Mail className="h-4 w-4 text-accent" />
-                <span className="text-sm">abdulwasea@wecodeone.com</span>
+                <span className="text-sm">abdulwasea.alkhorasani@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 rtl:space-x-reverse text-primary-foreground/80">
                 <Phone className="h-4 w-4 text-accent" />
-                <span className="text-sm">+967 xxx xxx xxx</span>
+                <span className="text-sm">+967 739266110</span>
               </div>
               <div className="flex items-center space-x-3 rtl:space-x-reverse text-primary-foreground/80">
                 <MapPin className="h-4 w-4 text-accent" />
@@ -108,9 +108,6 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-primary-foreground/80 text-sm">
               © {currentYear} We Code One. جميع الحقوق محفوظة.
-            </div>
-            <div className="text-primary-foreground/80 text-sm">
-              صُنع بـ ❤️ في اليمن
             </div>
           </div>
         </div>

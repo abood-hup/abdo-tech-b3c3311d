@@ -2,7 +2,12 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Smartphone, Globe, Database, Code } from 'lucide-react';
+import { ExternalLink, Github, Smartphone, Globe, Database, Code, Calculator } from 'lucide-react';
+import portfolioWarehouse from "@/assets/portfolio-warehouse.jpg";
+import portfolioUniversityPayment from "@/assets/portfolio-university-payment.jpg";
+import portfolioCompanyWebsite from "@/assets/portfolio-company-website.jpg";
+import portfolioEmployeeSystem from "@/assets/portfolio-employee-system.jpg";
+import portfolioAccountingSystem from "@/assets/portfolio-accounting-system.jpg";
 
 const Portfolio = () => {
   const projects = [
@@ -10,7 +15,7 @@ const Portfolio = () => {
       id: 1,
       title: "نظام إدارة المخازن المتقدم",
       description: "نظام شامل لإدارة المخازن والمبيعات مع تتبع المخزون في الوقت الفعلي وتقارير مالية متقدمة",
-      image: "/api/placeholder/400/250",
+      image: portfolioWarehouse,
       technologies: ["Java", "MySQL", "JavaFX"],
       category: "Desktop Application",
       icon: <Database className="w-5 h-5" />,
@@ -18,9 +23,9 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      title: "تطبيق التجارة الإلكترونية",
-      description: "تطبيق جوال متكامل للتجارة الإلكترونية مع نظام دفع آمن وإدارة الطلبات",
-      image: "/api/placeholder/400/250",
+      title: "تطبيق السداد الجامعي",
+      description: "تطبيق جوال يستطيع الطالب من خلاله تسديد رسومه الجامعية بطريقة آمنة ومريحة",
+      image: portfolioUniversityPayment,
       technologies: ["Flutter", "PHP", "MySQL"],
       category: "Mobile App",
       icon: <Smartphone className="w-5 h-5" />,
@@ -30,7 +35,7 @@ const Portfolio = () => {
       id: 3,
       title: "موقع الشركة التفاعلي",
       description: "موقع ويب تفاعلي بالكامل مع لوحة إدارة متطورة ونظام إدارة المحتوى",
-      image: "/api/placeholder/400/250",
+      image: portfolioCompanyWebsite,
       technologies: ["HTML", "CSS", "JavaScript", "PHP"],
       category: "Web Development",
       icon: <Globe className="w-5 h-5" />,
@@ -40,11 +45,21 @@ const Portfolio = () => {
       id: 4,
       title: "نظام إدارة الموظفين",
       description: "تطبيق ويب لإدارة الموظفين والحضور والانصراف مع تقارير الأداء",
-      image: "/api/placeholder/400/250",
+      image: portfolioEmployeeSystem,
       technologies: ["C#", "ASP.NET", "SQL Server"],
       category: "Web Application",
       icon: <Code className="w-5 h-5" />,
       color: "from-orange-500 to-red-600"
+    },
+    {
+      id: 5,
+      title: "نظام محاسبي لإدارة الرسوم الجامعية",
+      description: "نظام محاسبي شامل لإدارة الرسوم الجامعية للطلاب ومتابعة عمليات التسديد والتقارير المالية",
+      image: portfolioAccountingSystem,
+      technologies: ["C#", "SQL Server", "Crystal Reports"],
+      category: "Desktop Application",
+      icon: <Calculator className="w-5 h-5" />,
+      color: "from-teal-500 to-cyan-600"
     }
   ];
 
@@ -52,7 +67,7 @@ const Portfolio = () => {
     { name: "الكل", count: projects.length },
     { name: "تطبيقات الويب", count: 2 },
     { name: "تطبيقات الجوال", count: 1 },
-    { name: "أنظمة سطح المكتب", count: 1 }
+    { name: "أنظمة سطح المكتب", count: 2 }
   ];
 
   return (
@@ -85,8 +100,14 @@ const Portfolio = () => {
           {projects.map((project) => (
             <Card key={project.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
-                  <div className="text-white text-6xl opacity-20">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-80 group-hover:opacity-70 transition-opacity duration-300`}></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-white text-6xl opacity-30">
                     {project.icon}
                   </div>
                 </div>

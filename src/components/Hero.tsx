@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail, Code2, Sparkles, Star } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Code2, Sparkles, Star, MessageCircle } from "lucide-react";
 import profileImage from "@/assets/profile-image.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -32,9 +32,9 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-slide-up">
           {/* Profile Image */}
-          <div className="relative inline-block group">
+          <div className="relative inline-block group mt-8">
             <div className="absolute -inset-4 bg-gradient-to-r from-accent to-primary rounded-full blur opacity-30 group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
-            <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden shadow-elegant border-4 border-white/20 backdrop-blur-sm">
+            <div className="relative w-48 h-48 mx-auto rounded-full overflow-hidden shadow-elegant border-4 border-white/20 backdrop-blur-sm">
               <img 
                 src={profileImage} 
                 alt="المهندس عبدالواسع الخراساني" 
@@ -53,9 +53,11 @@ const Hero = () => {
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              أهلاً، أنا{" "}
-              <span className="text-gradient-accent">عبدالواسع الخراساني</span>
+              Hello
             </h1>
+            <h2 className="text-3xl md:text-4xl font-bold text-gradient-accent">
+              عبدالواسع الخراساني
+            </h2>
             <p className="text-xl md:text-2xl text-muted-foreground font-medium">
               مطور أنظمة محترف متخصص في تحويل أفكارك إلى حلول برمجية واقعية
             </p>
@@ -90,19 +92,23 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6 rtl:space-x-reverse">
             <a 
-              href="#" 
+              href="https://wa.me/qr/HLAOI7ZVLESBH1" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
             >
-              <Github className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
+              <MessageCircle className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
             </a>
             <a 
-              href="#" 
+              href="https://www.linkedin.com/in/abdulwasea-r-alkhorasani-6863b7335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
             >
               <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
             </a>
             <a 
-              href="#contact" 
+              href="mailto:abdulwasea.alkhorasani@gmail.com" 
               className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
             >
               <Mail className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />

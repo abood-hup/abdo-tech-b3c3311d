@@ -33,10 +33,24 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
+    // Create WhatsApp message
+    const whatsappMessage = `مرحباً، أنا ${formData.name}
+    
+البريد الإلكتروني: ${formData.email}
+الهاتف: ${formData.phone || 'غير محدد'}
+نوع المشروع: ${formData.project || 'غير محدد'}
+
+تفاصيل المشروع:
+${formData.message}`;
+
+    const whatsappURL = `https://wa.me/967739266110?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Open WhatsApp
+    window.open(whatsappURL, '_blank');
+
     toast({
-      title: "تم إرسال الرسالة بنجاح!",
-      description: "سأتواصل معك في أقرب وقت ممكن",
+      title: "تم توجيهك للواتساب!",
+      description: "سيتم فتح الواتساب لإرسال رسالتك",
     });
 
     // Reset form
@@ -53,14 +67,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: "البريد الإلكتروني",
-      value: "abdulwasea@wecodeone.com",
-      link: "mailto:abdulwasea@wecodeone.com"
+      value: "abdulwasea.alkhorasani@gmail.com",
+      link: "mailto:abdulwasea.alkhorasani@gmail.com"
     },
     {
       icon: Phone,
       title: "الهاتف",
-      value: "+967 xxx xxx xxx",
-      link: "tel:+967xxxxxxxxx"
+      value: "+967 739266110",
+      link: "tel:+967739266110"
     },
     {
       icon: MapPin,
@@ -125,14 +139,14 @@ const Contact = () => {
                 <h4 className="font-bold mb-4 text-gradient-accent">تواصل سريع</h4>
                 <div className="space-y-3">
                   <a
-                    href="https://wa.me/967xxxxxxxxx"
+                    href="https://wa.me/967739266110"
                     className="flex items-center justify-center w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all duration-300 ease-out"
                   >
                     <MessageCircle className="h-5 w-5 mr-2" />
                     واتساب
                   </a>
                   <a
-                    href="mailto:abdulwasea@wecodeone.com"
+                    href="mailto:abdulwasea.alkhorasani@gmail.com"
                     className="flex items-center justify-center w-full py-3 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-all duration-300 ease-out"
                   >
                     <Mail className="h-5 w-5 mr-2" />
