@@ -7,7 +7,7 @@
 @layer base {
   :root {
     /* Core Brand Colors - Soft & Calm */
-    --background: 215 25% 95%;
+    --background: 220 20% 97%;
     --foreground: 220 20% 12%;
     
     /* Soft Professional Palette */
@@ -16,9 +16,9 @@
     --primary-glow: 220 25% 35%;
     
     /* Soft Blue-Green Accent */
-    --accent: 200 40% 45%;
+    --accent: 200 35% 50%;
     --accent-foreground: 0 0% 98%;
-    --accent-soft: 200 30% 95%;
+    --accent-soft: 200 25% 95%;
     
     /* Soft Grays */
     --secondary: 220 15% 94%; 
@@ -68,9 +68,9 @@
     --primary-foreground: 220 100% 4%;
     --primary-glow: 180 100% 60%;
     
-    --accent: 180 100% 50%;
+    --accent: 200 60% 50%;
     --accent-foreground: 220 100% 4%;
-    --accent-soft: 180 100% 8%;
+    --accent-soft: 200 40% 15%;
     
     --secondary: 220 15% 12%;
     --secondary-foreground: 0 0% 95%;
@@ -108,10 +108,12 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    direction: rtl;
   }
   
   html {
     scroll-behavior: smooth;
+    direction: rtl;
   }
 }
 

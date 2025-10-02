@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail, Code2, Sparkles, Star, MessageCircle } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Code2, Sparkles, Star, MessageCircle, Instagram, Facebook } from "lucide-react";
 import profileImage from "@/assets/profile-image.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -112,6 +112,22 @@ const Hero = () => {
               className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
             >
               <Mail className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
+            </a>
+            <a 
+              href="https://www.instagram.com/0a_r.9?igsh=MWk5b3o5aWtyajZ3ZQ==" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
+            >
+              <Instagram className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
+            </a>
+            <a 
+              href="https://www.facebook.com/share/1A9i2gAigv/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
+            >
+              <Facebook className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
             </a>
           </div>
         </div>

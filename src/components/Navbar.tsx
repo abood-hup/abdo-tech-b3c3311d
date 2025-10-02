@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Code2 } from "lucide-react";
 import ThemeToggle from './ThemeToggle';
+import LanguageToggle from './LanguageToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,13 +11,14 @@ const Navbar = () => {
     { name: "من أنا", href: "#about" },
     { name: "خدماتي", href: "#services" },
     { name: "أعمالي", href: "#portfolio" },
-    { name: "عرض سعر", href: "#quote" },
     { name: "اتصل بي", href: "#contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4">
+    <>
+      <LanguageToggle />
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+        <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2 rtl:space-x-reverse">
@@ -68,8 +70,9 @@ const Navbar = () => {
             <button className="btn-hero w-full mt-4">ابدأ مشروعك</button>
           </div>
         )}
-      </div>
-    </nav>
+        </div>
+      </nav>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle, Clock } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -9,6 +9,7 @@ const Contact = () => {
     email: "",
     phone: "",
     project: "",
+    timeline: "",
     message: ""
   });
 
@@ -39,6 +40,7 @@ const Contact = () => {
 البريد الإلكتروني: ${formData.email}
 الهاتف: ${formData.phone || 'غير محدد'}
 نوع المشروع: ${formData.project || 'غير محدد'}
+الجدول الزمني: ${formData.timeline || 'غير محدد'}
 
 تفاصيل المشروع:
 ${formData.message}`;
@@ -59,6 +61,7 @@ ${formData.message}`;
       email: "",
       phone: "",
       project: "",
+      timeline: "",
       message: ""
     });
   };
@@ -95,7 +98,7 @@ ${formData.message}`;
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-subtle">
+    <section id="contact" className="py-20 bg-gradient-to-br from-background via-accent-soft/10 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -158,7 +161,7 @@ ${formData.message}`;
 
             {/* Contact Form */}
             <div className="lg:col-span-2 animate-slide-up">
-              <div className="card-professional p-8">
+              <div className="bg-gradient-to-br from-card/80 to-accent-soft/20 backdrop-blur-sm p-8 rounded-2xl shadow-elegant border border-accent/20">
                 <h3 className="text-2xl font-bold text-gradient-accent mb-6">
                   أرسل رسالة
                 </h3>
@@ -174,8 +177,8 @@ ${formData.message}`;
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out"
-                        placeholder="اسمك الكامل"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background/80 focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out"
+                      placeholder="اسمك الكامل"
                         required
                       />
                     </div>
@@ -189,7 +192,7 @@ ${formData.message}`;
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background/80 focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out"
                         placeholder="email@example.com"
                         required
                       />
@@ -206,7 +209,7 @@ ${formData.message}`;
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background/80 focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out"
                         placeholder="+967 xxx xxx xxx"
                       />
                     </div>
@@ -219,7 +222,7 @@ ${formData.message}`;
                         name="project"
                         value={formData.project}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background/80 focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out"
                       >
                         <option value="">اختر نوع المشروع</option>
                         {projectTypes.map((type, index) => (
@@ -227,6 +230,26 @@ ${formData.message}`;
                         ))}
                       </select>
                     </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2 flex items-center gap-2">
+                      <Clock className="w-4 h-4" />
+                      الجدول الزمني المطلوب
+                    </label>
+                    <select
+                      name="timeline"
+                      value={formData.timeline}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background/80 focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out"
+                    >
+                      <option value="">اختر المدة المتوقعة</option>
+                      <option value="عاجل (أقل من أسبوع)">عاجل (أقل من أسبوع)</option>
+                      <option value="1-2 أسابيع">1-2 أسابيع</option>
+                      <option value="شهر واحد">شهر واحد</option>
+                      <option value="2-3 أشهر">2-3 أشهر</option>
+                      <option value="مرن">مرن</option>
+                    </select>
                   </div>
 
                   <div>
@@ -238,7 +261,7 @@ ${formData.message}`;
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={6}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out resize-none"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background/80 focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out resize-none"
                       placeholder="اشرح لي تفاصيل مشروعك، أهدافك، والميزانية المتوقعة..."
                       required
                     ></textarea>

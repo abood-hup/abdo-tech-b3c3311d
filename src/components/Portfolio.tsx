@@ -8,6 +8,8 @@ import portfolioUniversityPayment from "@/assets/portfolio-university-payment.jp
 import portfolioCompanyWebsite from "@/assets/portfolio-company-website.jpg";
 import portfolioEmployeeSystem from "@/assets/portfolio-employee-system.jpg";
 import portfolioAccountingSystem from "@/assets/portfolio-accounting-system.jpg";
+import portfolioMedicalAI from "@/assets/portfolio-medical-ai.jpg";
+import portfolioNovelsWebsite from "@/assets/portfolio-novels-website.jpg";
 
 const Portfolio = () => {
   const projects = [
@@ -17,9 +19,9 @@ const Portfolio = () => {
       description: "نظام شامل لإدارة المخازن والمبيعات مع تتبع المخزون في الوقت الفعلي وتقارير مالية متقدمة",
       image: portfolioWarehouse,
       technologies: ["Java", "MySQL", "JavaFX"],
-      category: "Desktop Application",
+      category: "تطبيقات سطح المكتب",
       icon: <Database className="w-5 h-5" />,
-      color: "from-blue-500 to-indigo-600"
+      demoUrl: "#"
     },
     {
       id: 2,
@@ -27,19 +29,19 @@ const Portfolio = () => {
       description: "تطبيق جوال يستطيع الطالب من خلاله تسديد رسومه الجامعية بطريقة آمنة ومريحة",
       image: portfolioUniversityPayment,
       technologies: ["Flutter", "PHP", "MySQL"],
-      category: "Mobile App",
+      category: "تطبيقات الجوال",
       icon: <Smartphone className="w-5 h-5" />,
-      color: "from-green-500 to-teal-600"
+      demoUrl: "#"
     },
     {
       id: 3,
-      title: "موقع الشركة التفاعلي",
-      description: "موقع ويب تفاعلي بالكامل مع لوحة إدارة متطورة ونظام إدارة المحتوى",
+      title: "موقع للطلب أونلاين",
+      description: "موقع ويب تفاعلي بالكامل للطلبات أونلاين مع لوحة إدارة متطورة ونظام إدارة المحتوى",
       image: portfolioCompanyWebsite,
       technologies: ["HTML", "CSS", "JavaScript", "PHP"],
-      category: "Web Development",
+      category: "تطوير الويب",
       icon: <Globe className="w-5 h-5" />,
-      color: "from-purple-500 to-pink-600"
+      demoUrl: "#"
     },
     {
       id: 4,
@@ -47,9 +49,9 @@ const Portfolio = () => {
       description: "تطبيق ويب لإدارة الموظفين والحضور والانصراف مع تقارير الأداء",
       image: portfolioEmployeeSystem,
       technologies: ["C#", "ASP.NET", "SQL Server"],
-      category: "Web Application",
+      category: "تطبيقات الويب",
       icon: <Code className="w-5 h-5" />,
-      color: "from-orange-500 to-red-600"
+      demoUrl: "#"
     },
     {
       id: 5,
@@ -57,9 +59,29 @@ const Portfolio = () => {
       description: "نظام محاسبي شامل لإدارة الرسوم الجامعية للطلاب ومتابعة عمليات التسديد والتقارير المالية",
       image: portfolioAccountingSystem,
       technologies: ["C#", "SQL Server", "Crystal Reports"],
-      category: "Desktop Application",
+      category: "تطبيقات سطح المكتب",
       icon: <Calculator className="w-5 h-5" />,
-      color: "from-teal-500 to-cyan-600"
+      demoUrl: "#"
+    },
+    {
+      id: 6,
+      title: "نظام ضبابي خبير طبي",
+      description: "نظام ذكاء اصطناعي طبي متقدم يقوم بتشخيص الحالات المرضية بناءً على الأعراض وتقديم توصيات علاجية مناسبة",
+      image: portfolioMedicalAI,
+      technologies: ["Python", "AI", "Machine Learning"],
+      category: "الذكاء الاصطناعي",
+      icon: <Code className="w-5 h-5" />,
+      demoUrl: "#"
+    },
+    {
+      id: 7,
+      title: "موقع روايات أدبية",
+      description: "موقع ويب أنيق لعرض الروايات الأدبية الكلاسيكية لكبار الكتاب مثل فيودور ديستويفسكي وويليام شكسبير",
+      image: portfolioNovelsWebsite,
+      technologies: ["HTML", "CSS", "JavaScript"],
+      category: "تطوير الويب",
+      icon: <Globe className="w-5 h-5" />,
+      demoUrl: "#"
     }
   ];
 
@@ -67,7 +89,8 @@ const Portfolio = () => {
     { name: "الكل", count: projects.length },
     { name: "تطبيقات الويب", count: 2 },
     { name: "تطبيقات الجوال", count: 1 },
-    { name: "أنظمة سطح المكتب", count: 2 }
+    { name: "تطبيقات سطح المكتب", count: 2 },
+    { name: "الذكاء الاصطناعي", count: 1 }
   ];
 
   return (
@@ -139,13 +162,9 @@ const Portfolio = () => {
                 </div>
                 
                 <div className="flex gap-3">
-                  <Button size="sm" className="flex-1">
+                  <Button size="sm" className="flex-1" onClick={() => window.open(project.demoUrl, '_blank')}>
                     <ExternalLink className="w-4 h-4 ml-2" />
                     معاينة المشروع
-                  </Button>
-                  <Button size="sm" variant="outline">
-                    <Github className="w-4 h-4 ml-2" />
-                    الكود
                   </Button>
                 </div>
               </CardContent>
@@ -162,7 +181,11 @@ const Portfolio = () => {
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               أتطلع إلى العمل على مشاريع جديدة ومثيرة. دعنا نناقش كيف يمكنني مساعدتك في تحويل فكرتك إلى واقع رقمي.
             </p>
-            <Button size="lg" className="btn-hero">
+            <Button 
+              size="lg" 
+              className="btn-hero"
+              onClick={() => window.open('https://wa.me/qr/HLAOI7ZVLESBH1', '_blank')}
+            >
               ابدأ مشروعك الآن
             </Button>
           </div>
