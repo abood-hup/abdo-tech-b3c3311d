@@ -108,12 +108,10 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    direction: rtl;
   }
   
   html {
     scroll-behavior: smooth;
-    direction: rtl;
   }
 }
 

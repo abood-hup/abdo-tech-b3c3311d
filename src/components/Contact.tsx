@@ -161,10 +161,18 @@ ${formData.message}`;
 
             {/* Contact Form */}
             <div className="lg:col-span-2 animate-slide-up">
-              <div className="bg-gradient-to-br from-card/80 to-accent-soft/20 backdrop-blur-sm p-8 rounded-2xl shadow-elegant border border-accent/20">
-                <h3 className="text-2xl font-bold text-gradient-accent mb-6">
-                  أرسل رسالة
-                </h3>
+              <div className="relative bg-gradient-to-br from-card via-background to-card p-8 rounded-3xl shadow-2xl border-2 border-accent/30 overflow-hidden backdrop-blur-lg">
+                {/* Decorative elements */}
+                <div className="absolute top-0 right-0 w-40 h-40 bg-accent/10 rounded-full blur-3xl -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl -z-10"></div>
+                
+                <div className="relative z-10">
+                  <h3 className="text-3xl font-bold text-gradient-accent mb-2 flex items-center gap-3">
+                    <Send className="h-7 w-7 text-accent" />
+                    أرسل رسالة
+                  </h3>
+                  <p className="text-muted-foreground mb-8">املأ النموذج وسأتواصل معك في أقرب وقت</p>
+                </div>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -269,9 +277,9 @@ ${formData.message}`;
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center btn-hero"
+                    className="w-full flex items-center justify-center gap-3 py-4 bg-gradient-to-r from-accent to-primary text-white font-bold rounded-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group"
                   >
-                    <Send className="h-5 w-5 mr-2" />
+                    <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     إرسال الرسالة
                   </button>
                 </form>
