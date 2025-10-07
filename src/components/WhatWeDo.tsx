@@ -54,36 +54,48 @@ const WhatWeDo = () => {
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
               }}
             >
-              <div className="relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 h-full transition-all duration-500 hover:shadow-elegant hover:border-accent/30 hover:-translate-y-2">
+              {/* Glow effect background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500 scale-95 group-hover:scale-100"></div>
+              
+              <div className="relative bg-card backdrop-blur-sm border-2 border-border rounded-2xl p-8 h-full transition-all duration-500 shadow-professional hover:shadow-elegant hover:border-accent/50 hover:-translate-y-3 overflow-hidden">
+                {/* Decorative corner gradient */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent/10 to-transparent rounded-bl-full opacity-50"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-primary/10 to-transparent rounded-tr-full opacity-50"></div>
+                
                 {/* Icon */}
-                <div className="mb-6 relative">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center shadow-accent group-hover:scale-110 transition-all duration-300">
-                    <service.icon className="h-8 w-8 text-white" />
+                <div className="mb-6 relative z-10">
+                  <div className="relative inline-block">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent to-accent/60 rounded-2xl blur-md opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-accent via-accent to-accent/80 flex items-center justify-center shadow-accent group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                      <service.icon className="h-10 w-10 text-white" />
+                    </div>
                   </div>
-                  {/* Decorative dot */}
-                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-primary rounded-full animate-pulse"></div>
+                  {/* Animated pulse dot */}
+                  <div className="absolute -top-1 -right-1 w-5 h-5 bg-primary rounded-full animate-pulse shadow-lg shadow-primary/50"></div>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold mb-3 text-card-foreground group-hover:text-accent transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-3 text-card-foreground group-hover:text-gradient-accent transition-all duration-300 relative z-10">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                <p className="text-muted-foreground text-sm mb-6 leading-relaxed relative z-10">
                   {service.description}
                 </p>
 
-                {/* Features */}
-                <ul className="space-y-2">
+                {/* Features with enhanced styling */}
+                <ul className="space-y-3 relative z-10">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <CheckCircle className="w-4 h-4 text-accent flex-shrink-0" />
-                      <span>{feature}</span>
+                    <li key={idx} className="flex items-center gap-3 text-sm text-muted-foreground group/item">
+                      <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover/item:bg-accent/20 transition-colors duration-300">
+                        <CheckCircle className="w-3 h-3 text-accent" />
+                      </div>
+                      <span className="group-hover/item:text-foreground transition-colors duration-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                {/* Hover effect overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                {/* Bottom gradient line */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
           ))}
