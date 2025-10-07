@@ -39,7 +39,7 @@ const About = () => {
             {/* Story */}
             <div className="space-y-6 animate-slide-up">
               <h3 className="text-2xl font-bold text-gradient-accent" dir="rtl">قصتي</h3>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-4 text-muted-foreground" dir="rtl">
                 <p>
                   بدأت رحلتي في عالم البرمجة منذ أكثر من 3 سنوات، مدفوعاً بشغف حقيقي لحل المشاكل وبناء حلول تقنية تحدث فرقاً في حياة الناس والأعمال.
                 </p>
@@ -98,7 +98,7 @@ const About = () => {
                 <Award className="h-6 w-6 text-accent mr-3" />
                 <h3 className="text-xl font-bold" dir="rtl">التعليم والشهادات</h3>
               </div>
-              <ul className="space-y-3 text-muted-foreground">
+              <ul className="space-y-3 text-muted-foreground" dir="rtl">
                 <li>• بكالوريوس نظم معلومات حاسوبية</li>
                 <li>• شهادات في تطوير التطبيقات المتقدمة</li>
                 <li>• دورات متخصصة في تحليل الأنظمة</li>
@@ -111,7 +111,7 @@ const About = () => {
                 <Globe className="h-6 w-6 text-accent mr-3" />
                 <h3 className="text-xl font-bold" dir="rtl">اهتماماتي</h3>
               </div>
-              <ul className="space-y-3 text-muted-foreground">
+              <ul className="space-y-3 text-muted-foreground" dir="rtl">
                 <li>• تطوير الأنظمة المخصصة</li>
                 <li>• إدارة مواقع الويب</li>
                 <li>• الذكاء الاصطناعي وتطبيقاته</li>
