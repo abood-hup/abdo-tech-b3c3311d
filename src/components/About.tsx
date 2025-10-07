@@ -38,7 +38,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             {/* Story */}
             <div className="space-y-6 animate-slide-up">
-              <h3 className="text-2xl font-bold text-gradient-accent">قصتي</h3>
+              <h3 className="text-2xl font-bold text-gradient-accent" dir="rtl">قصتي</h3>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   بدأت رحلتي في عالم البرمجة منذ أكثر من 3 سنوات، مدفوعاً بشغف حقيقي لحل المشاكل وبناء حلول تقنية تحدث فرقاً في حياة الناس والأعمال.
@@ -96,7 +96,7 @@ const About = () => {
             <div className="card-professional p-8 animate-slide-up">
               <div className="flex items-center mb-4">
                 <Award className="h-6 w-6 text-accent mr-3" />
-                <h3 className="text-xl font-bold">التعليم والشهادات</h3>
+                <h3 className="text-xl font-bold" dir="rtl">التعليم والشهادات</h3>
               </div>
               <ul className="space-y-3 text-muted-foreground">
                 <li>• بكالوريوس نظم معلومات حاسوبية</li>
@@ -109,7 +109,7 @@ const About = () => {
             <div className="card-professional p-8 animate-slide-up">
               <div className="flex items-center mb-4">
                 <Globe className="h-6 w-6 text-accent mr-3" />
-                <h3 className="text-xl font-bold">اهتماماتي</h3>
+                <h3 className="text-xl font-bold" dir="rtl">اهتماماتي</h3>
               </div>
               <ul className="space-y-3 text-muted-foreground">
                 <li>• تطوير الأنظمة المخصصة</li>

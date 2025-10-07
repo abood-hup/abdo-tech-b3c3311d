@@ -20,7 +20,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2 rtl:space-x-reverse">
             <Code2 className="h-8 w-8 text-accent" />
-            <span className="text-xl font-bold text-gradient-primary">We Code One</span>
+            <span className="text-xl font-bold text-gradient-primary">DevArt</span>
           </div>
 
           {/* Desktop Menu */}

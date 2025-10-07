@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2 rtl:space-x-reverse">
               <Code2 className="h-8 w-8 text-accent" />
-              <span className="text-xl font-bold">We Code One</span>
+              <span className="text-xl font-bold">DevArt</span>
             </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               نحول أفكارك إلى حلول برمجية واقعية تساعد أعمالك على النمو والازدهار في العصر الرقمي.
@@ -107,7 +107,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-primary-foreground/80 text-sm">
-              © {currentYear} We Code One. جميع الحقوق محفوظة.
+              © {currentYear} DevArt. جميع الحقوق محفوظة.
             </div>
           </div>
         </div>

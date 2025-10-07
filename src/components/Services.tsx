@@ -61,29 +61,32 @@ const Services = () => {
           {services.map((service, index) => (
             <div key={index} className="group relative">
               {/* Service Card */}
-              <div className="relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-professional hover:shadow-elegant transition-all duration-500 hover:border-accent/30 overflow-hidden">
+              <div className="relative bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-professional hover:shadow-elegant transition-all duration-500 hover:border-accent/30 overflow-hidden">
                 {/* Badge */}
-                <div className="absolute top-4 right-4">
-                  <span className={`px-3 py-1 text-xs font-medium rounded-full ${
+                <div className="absolute top-4 right-4 z-20">
+                  <span className={`px-4 py-1.5 text-xs font-semibold rounded-full backdrop-blur-sm ${
                     service.color === 'primary' 
-                      ? 'bg-primary/10 text-primary border border-primary/20' 
-                      : 'bg-accent/10 text-accent border border-accent/20'
+                      ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary border border-primary/30 shadow-sm' 
+                      : 'bg-gradient-to-r from-accent/20 to-accent/10 text-accent border border-accent/30 shadow-sm'
                   }`}>
                     {service.badge}
                   </span>
                 </div>
 
                 {/* Background Pattern */}
-                <div className="absolute top-0 right-0 w-32 h-32 opacity-5">
+                <div className="absolute top-0 right-0 w-40 h-40 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity duration-500">
                   <service.icon className="w-full h-full" />
                 </div>
 
+                {/* Decorative Elements */}
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-br from-accent/10 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300 ${
+                  <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 ${
                     service.color === 'primary' 
-                      ? 'bg-gradient-to-br from-primary to-primary-glow shadow-elegant' 
-                      : 'bg-gradient-to-br from-accent to-accent/80 shadow-accent'
+                      ? 'bg-gradient-to-br from-primary via-primary-glow to-primary shadow-elegant' 
+                      : 'bg-gradient-to-br from-accent via-accent/90 to-accent/80 shadow-accent'
                   }`}>
                     <service.icon className="h-10 w-10 text-white" />
                   </div>
