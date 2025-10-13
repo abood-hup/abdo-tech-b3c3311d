@@ -37,31 +37,31 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 px-4 relative overflow-hidden">
+    <section id="services" className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-10 md:mb-12 lg:mb-16 animate-fade-in">
           <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-accent/10 text-accent font-medium rounded-full text-sm border border-accent/20">
+            <span className="px-4 py-2 bg-accent/10 text-accent font-medium rounded-full text-xs sm:text-sm border border-accent/20">
               ماذا أقدم
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 px-4">
             <span className="text-gradient-primary">خدماتي المميزة</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
             أقدم مجموعة شاملة من الخدمات التقنية لمساعدة الشركات والأفراد في تحقيق أهدافهم الرقمية بأعلى معايير الجودة والكفاءة
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {services.map((service, index) => (
             <div key={index} className="group relative">
               {/* Service Card */}
-              <div className="relative bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-professional hover:shadow-elegant transition-all duration-500 hover:border-accent/30 overflow-hidden">
+              <div className="relative bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 shadow-professional hover:shadow-elegant transition-all duration-500 hover:border-accent/30 overflow-hidden">
                 {/* Badge */}
                 <div className="absolute top-4 right-4 z-20">
                   <span className={`px-4 py-1.5 text-xs font-semibold rounded-full backdrop-blur-sm ${
@@ -83,19 +83,19 @@ const Services = () => {
 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 ${
+                  <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 ${
                     service.color === 'primary' 
                       ? 'bg-gradient-to-br from-primary via-primary-glow to-primary shadow-elegant' 
                       : 'bg-gradient-to-br from-accent via-accent/90 to-accent/80 shadow-accent'
                   }`}>
-                    <service.icon className="h-10 w-10 text-white" />
+                    <service.icon className="h-8 w-8 md:h-10 md:w-10 text-white" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-2xl font-bold mb-4 text-card-foreground group-hover:text-accent transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 md:mb-4 text-card-foreground group-hover:text-accent transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 md:mb-6">
                     {service.description}
                   </p>
 
@@ -127,11 +127,11 @@ const Services = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="text-center p-6 bg-card/30 backdrop-blur-sm rounded-xl border border-border/30">
-            <Zap className="h-8 w-8 text-accent mx-auto mb-3" />
-            <div className="text-2xl font-bold text-primary mb-1">50+</div>
-            <div className="text-sm text-muted-foreground">مشروع مكتمل</div>
+        <div className="mt-12 md:mt-16 lg:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+          <div className="text-center p-4 md:p-6 bg-card/30 backdrop-blur-sm rounded-xl border border-border/30">
+            <Zap className="h-6 w-6 md:h-8 md:w-8 text-accent mx-auto mb-2 md:mb-3" />
+            <div className="text-xl md:text-2xl font-bold text-primary mb-1">50+</div>
+            <div className="text-xs md:text-sm text-muted-foreground">مشروع مكتمل</div>
           </div>
           <div className="text-center p-6 bg-card/30 backdrop-blur-sm rounded-xl border border-border/30">
             <Users className="h-8 w-8 text-primary mx-auto mb-3" />

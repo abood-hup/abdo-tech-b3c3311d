@@ -94,23 +94,24 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6">
+    <section id="portfolio" className="py-12 md:py-16 lg:py-20 bg-gradient-subtle">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 md:mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-4 md:mb-6 px-4">
             معرض أعمالي
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             مجموعة مختارة من مشاريعي المميزة التي تعكس خبرتي في تطوير الحلول البرمجية المتنوعة
           </p>
           
           {/* Filter Categories */}
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4 mt-6 md:mt-8 px-4">
             {categories.map((category, index) => (
               <Button 
                 key={index}
                 variant={index === 0 ? "default" : "outline"}
-                className="rounded-full"
+                className="rounded-full text-xs sm:text-sm"
+                size="sm"
               >
                 {category.name} ({category.count})
               </Button>
@@ -119,44 +120,44 @@ const Portfolio = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {projects.map((project) => (
             <Card key={project.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-500 bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border-border/50 hover:border-accent/30">
               <div className="relative overflow-hidden">
                 {/* Icon Badge */}
-                <div className="absolute top-4 left-4 z-20 w-14 h-14 bg-gradient-to-br from-accent via-accent/90 to-accent/80 rounded-2xl flex items-center justify-center shadow-elegant group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                  <project.icon className="w-7 h-7 text-white" />
+                <div className="absolute top-3 left-3 md:top-4 md:left-4 z-20 w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-accent via-accent/90 to-accent/80 rounded-xl md:rounded-2xl flex items-center justify-center shadow-elegant group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                  <project.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                 </div>
                 
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
                 
-                <div className="absolute top-4 right-4 z-10">
-                  <Badge variant="secondary" className="bg-white/95 backdrop-blur-sm text-foreground font-semibold border border-white/20 shadow-md">
+                <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10">
+                  <Badge variant="secondary" className="bg-white/95 backdrop-blur-sm text-foreground font-semibold border border-white/20 shadow-md text-xs md:text-sm">
                     {project.category}
                   </Badge>
                 </div>
               </div>
               
-              <CardHeader className="pb-4">
-                <CardTitle className="flex items-center gap-3 text-xl group-hover:text-accent transition-colors duration-300">
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center border border-accent/20">
-                    <project.icon className="w-5 h-5 text-accent" />
+              <CardHeader className="pb-3 md:pb-4">
+                <CardTitle className="flex items-center gap-2 md:gap-3 text-lg md:text-xl group-hover:text-accent transition-colors duration-300">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-accent/10 flex items-center justify-center border border-accent/20 flex-shrink-0">
+                    <project.icon className="w-4 h-4 md:w-5 md:h-5 text-accent" />
                   </div>
                   <span>{project.title}</span>
                 </CardTitle>
               </CardHeader>
               
               <CardContent className="pt-0">
-                <p className="text-muted-foreground mb-5 leading-relaxed">
+                <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-5 leading-relaxed">
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-6">
                   {project.technologies.map((tech, techIndex) => (
                     <Badge key={techIndex} variant="outline" className="text-xs px-3 py-1 bg-accent/5 border-accent/20 text-accent hover:bg-accent/10 transition-colors duration-300">
                       {tech}

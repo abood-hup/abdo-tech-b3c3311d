@@ -22,23 +22,23 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-12 md:py-16 lg:py-20 bg-gradient-subtle">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6">
+          <div className="text-center mb-10 md:mb-12 lg:mb-16 animate-fade-in">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-4 md:mb-6">
               من أنا؟
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               مطور أنظمة شغوف بتحويل التحديات التقنية إلى حلول مبتكرة تساعد الأعمال على النمو والازدهار
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 mb-12 md:mb-14 lg:mb-16">
             {/* Story */}
-            <div className="space-y-6 animate-slide-up">
-              <h3 className="text-2xl font-bold text-gradient-accent" dir="rtl">قصتي</h3>
+            <div className="space-y-4 md:space-y-6 animate-slide-up">
+              <h3 className="text-xl sm:text-2xl font-bold text-gradient-accent" dir="rtl">قصتي</h3>
               <div className="space-y-4 text-muted-foreground" dir="rtl">
                 <p>
                   بدأت رحلتي في عالم البرمجة منذ أكثر من 3 سنوات، مدفوعاً بشغف حقيقي لحل المشاكل وبناء حلول تقنية تحدث فرقاً في حياة الناس والأعمال.
@@ -53,8 +53,8 @@ const About = () => {
             </div>
 
             {/* Skills */}
-            <div className="space-y-6 animate-slide-up">
-              <h3 className="text-2xl font-bold text-gradient-accent">مهاراتي التقنية</h3>
+            <div className="space-y-4 md:space-y-6 animate-slide-up">
+              <h3 className="text-xl sm:text-2xl font-bold text-gradient-accent">مهاراتي التقنية</h3>
               <div className="space-y-4">
                 {skills.map((skill, index) => (
                   <div key={skill.name}>
@@ -75,9 +75,9 @@ const About = () => {
           </div>
 
           {/* Achievements */}
-          <div className="grid md:grid-cols-3 gap-8 animate-fade-in">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 animate-fade-in">
             {achievements.map((achievement, index) => (
-              <div key={index} className="card-professional p-8 text-center">
+              <div key={index} className="card-professional p-6 md:p-8 text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4">
                   <achievement.icon className="h-8 w-8 text-accent" />
                 </div>
@@ -92,11 +92,11 @@ const About = () => {
           </div>
 
           {/* Education & Interests */}
-          <div className="mt-16 grid md:grid-cols-2 gap-12">
-            <div className="card-professional p-8 animate-slide-up">
+          <div className="mt-12 md:mt-14 lg:mt-16 grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+            <div className="card-professional p-6 md:p-8 animate-slide-up">
               <div className="flex items-center mb-4">
-                <Award className="h-6 w-6 text-accent mr-3" />
-                <h3 className="text-xl font-bold" dir="rtl">التعليم والشهادات</h3>
+                <Award className="h-5 w-5 md:h-6 md:w-6 text-accent mr-3" />
+                <h3 className="text-lg sm:text-xl font-bold" dir="rtl">التعليم والشهادات</h3>
               </div>
               <ul className="space-y-3 text-muted-foreground" dir="rtl">
                 <li>• بكالوريوس نظم معلومات حاسوبية</li>
@@ -106,10 +106,10 @@ const About = () => {
               </ul>
             </div>
 
-            <div className="card-professional p-8 animate-slide-up">
+            <div className="card-professional p-6 md:p-8 animate-slide-up">
               <div className="flex items-center mb-4">
-                <Globe className="h-6 w-6 text-accent mr-3" />
-                <h3 className="text-xl font-bold" dir="rtl">اهتماماتي</h3>
+                <Globe className="h-5 w-5 md:h-6 md:w-6 text-accent mr-3" />
+                <h3 className="text-lg sm:text-xl font-bold" dir="rtl">اهتماماتي</h3>
               </div>
               <ul className="space-y-3 text-muted-foreground" dir="rtl">
                 <li>• تطوير الأنظمة المخصصة</li>

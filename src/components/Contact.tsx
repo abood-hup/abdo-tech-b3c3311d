@@ -98,39 +98,39 @@ ${formData.message}`;
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-background via-accent-soft/10 to-background">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-background via-accent-soft/10 to-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-gradient-primary mb-6">
+          <div className="text-center mb-10 md:mb-12 lg:mb-16 animate-fade-in">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-primary mb-4 md:mb-6 px-4">
               اتصل بي
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               هل لديك مشروع أو فكرة تود تحويلها إلى واقع؟ دعنا نناقشها معاً ونجد الحل الأمثل لك
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
             {/* Contact Info */}
-            <div className="space-y-8 animate-slide-up">
+            <div className="space-y-6 md:space-y-8 animate-slide-up">
               <div>
-                <h3 className="text-2xl font-bold text-gradient-accent mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-gradient-accent mb-4 md:mb-6">
                   معلومات التواصل
                 </h3>
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   {contactInfo.map((info, index) => (
                     <a
                       key={index}
                       href={info.link}
-                      className="flex items-center space-x-4 rtl:space-x-reverse p-4 rounded-lg hover:bg-card hover:shadow-professional transition-all duration-300 ease-out group"
+                      className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg hover:bg-card hover:shadow-professional transition-all duration-300 ease-out group"
                     >
-                      <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-all duration-300 ease-out">
-                        <info.icon className="h-6 w-6 text-accent" />
+                      <div className="w-10 h-10 md:w-12 md:h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-all duration-300 ease-out">
+                        <info.icon className="h-5 w-5 md:h-6 md:w-6 text-accent" />
                       </div>
-                      <div>
-                        <div className="font-medium text-foreground">{info.title}</div>
-                        <div className="text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out">{info.value}</div>
+                      <div className="min-w-0 flex-1">
+                        <div className="font-medium text-foreground text-sm md:text-base">{info.title}</div>
+                        <div className="text-xs md:text-sm text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out truncate">{info.value}</div>
                       </div>
                     </a>
                   ))}
@@ -138,14 +138,14 @@ ${formData.message}`;
               </div>
 
               {/* Quick Contact */}
-              <div className="card-professional p-6">
-                <h4 className="font-bold mb-4 text-gradient-accent">تواصل سريع</h4>
-                <div className="space-y-3">
+              <div className="card-professional p-4 md:p-6">
+                <h4 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-gradient-accent">تواصل سريع</h4>
+                <div className="space-y-2 md:space-y-3">
                   <a
                     href="https://wa.me/967739266110"
-                    className="flex items-center justify-center w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all duration-300 ease-out"
+                    className="flex items-center justify-center w-full py-2.5 md:py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all duration-300 ease-out text-sm md:text-base"
                   >
-                    <MessageCircle className="h-5 w-5 mr-2" />
+                    <MessageCircle className="h-4 w-4 md:h-5 md:w-5 mr-2" />
                     واتساب
                   </a>
                   <a
@@ -161,23 +161,23 @@ ${formData.message}`;
 
             {/* Contact Form */}
             <div className="lg:col-span-2 animate-slide-up">
-              <div className="relative bg-gradient-to-br from-card via-background to-card p-8 rounded-3xl shadow-2xl border-2 border-accent/30 overflow-hidden backdrop-blur-lg">
+              <div className="relative bg-gradient-to-br from-card via-background to-card p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl border-2 border-accent/30 overflow-hidden backdrop-blur-lg">
                 {/* Decorative elements */}
                 <div className="absolute top-0 right-0 w-40 h-40 bg-accent/10 rounded-full blur-3xl -z-10"></div>
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl -z-10"></div>
                 
                 <div className="relative z-10">
-                  <h3 className="text-3xl font-bold text-gradient-accent mb-2 flex items-center gap-3">
-                    <Send className="h-7 w-7 text-accent" />
-                    أرسل رسالة
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gradient-accent mb-2 flex items-center gap-2 md:gap-3">
+                    <Send className="h-5 w-5 md:h-7 md:w-7 text-accent flex-shrink-0" />
+                    <span>أرسل رسالة</span>
                   </h3>
-                  <p className="text-muted-foreground mb-8">املأ النموذج وسأتواصل معك في أقرب وقت</p>
+                  <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8">املأ النموذج وسأتواصل معك في أقرب وقت</p>
                 </div>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                     <div>
-                      <label className="block text-sm font-medium mb-2">
+                      <label className="block text-xs md:text-sm font-medium mb-2">
                         الاسم الكامل *
                       </label>
                       <input
@@ -185,7 +185,7 @@ ${formData.message}`;
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background/80 focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out"
+                      className="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base rounded-lg border border-border bg-background/80 focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out"
                       placeholder="اسمك الكامل"
                         required
                       />
@@ -207,7 +207,7 @@ ${formData.message}`;
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                     <div>
                       <label className="block text-sm font-medium mb-2">
                         رقم الهاتف
@@ -241,8 +241,8 @@ ${formData.message}`;
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2 flex items-center gap-2">
-                      <Clock className="w-4 h-4" />
+                    <label className="block text-xs md:text-sm font-medium mb-2 flex items-center gap-2">
+                      <Clock className="w-3 h-3 md:w-4 md:h-4" />
                       الجدول الزمني المطلوب
                     </label>
                     <select
@@ -261,15 +261,15 @@ ${formData.message}`;
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-xs md:text-sm font-medium mb-2">
                       تفاصيل المشروع *
                     </label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      rows={6}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background/80 focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out resize-none"
+                      rows={5}
+                      className="w-full px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base rounded-lg border border-border bg-background/80 focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-out resize-none"
                       placeholder="اشرح لي تفاصيل مشروعك، أهدافك، والميزانية المتوقعة..."
                       required
                     ></textarea>
@@ -277,9 +277,9 @@ ${formData.message}`;
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-3 py-4 bg-gradient-to-r from-accent to-primary text-white font-bold rounded-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group"
+                    className="w-full flex items-center justify-center gap-2 md:gap-3 py-3 md:py-4 text-sm md:text-base bg-gradient-to-r from-accent to-primary text-white font-bold rounded-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group"
                   >
-                    <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <Send className="h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
                     إرسال الرسالة
                   </button>
                 </form>
@@ -288,12 +288,12 @@ ${formData.message}`;
           </div>
 
           {/* Additional Info */}
-          <div className="mt-16 text-center animate-fade-in">
-            <div className="card-professional p-8">
-              <h3 className="text-xl font-bold text-gradient-primary mb-4">
+          <div className="mt-10 md:mt-12 lg:mt-16 text-center animate-fade-in">
+            <div className="card-professional p-6 md:p-8">
+              <h3 className="text-lg sm:text-xl font-bold text-gradient-primary mb-3 md:mb-4">
                 💡 هل تعلم؟
               </h3>
-              <p className="text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto">
                 أقدم استشارة مجانية أولى لمدة 30 دقيقة لمناقشة مشروعك وتقديم التوجيه الأولي. 
                 هذا يساعدك في فهم المتطلبات والتكاليف قبل البدء في التنفيذ.
               </p>
