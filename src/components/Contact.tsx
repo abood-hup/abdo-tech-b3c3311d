@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, MessageCircle, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle, Clock, Linkedin, Instagram, Facebook } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -154,6 +154,37 @@ ${formData.message}`;
                   >
                     <Mail className="h-5 w-5 mr-2" />
                     إيميل
+                  </a>
+                </div>
+              </div>
+
+              {/* Social Media Links */}
+              <div className="card-professional p-4 md:p-6">
+                <h4 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-gradient-accent">تابعني على</h4>
+                <div className="flex flex-wrap justify-center gap-3">
+                  <a 
+                    href="https://www.linkedin.com/in/abdulwasea-r-alkhorasani-6863b7335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
+                  >
+                    <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/0a_r.9?igsh=MWk5b3o5aWtyajZ3ZQ==" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
+                  >
+                    <Instagram className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
+                  </a>
+                  <a 
+                    href="https://www.facebook.com/share/1A9i2gAigv/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
+                  >
+                    <Facebook className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
                   </a>
                 </div>
               </div>

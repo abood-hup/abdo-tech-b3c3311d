@@ -88,48 +88,6 @@ const Hero = () => {
               تعرف على خدماتي
             </a>
           </div>
-
-          {/* Social Links */}
-          <div className="flex flex-wrap justify-center gap-3 md:gap-4 px-4 sm:px-0">
-            <a 
-              href="https://wa.me/qr/HLAOI7ZVLESBH1" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 md:p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
-            >
-              <MessageCircle className="h-4 w-4 md:h-5 md:w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/abdulwasea-r-alkhorasani-6863b7335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
-            >
-              <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
-            </a>
-            <a 
-              href="mailto:abdulwasea.alkhorasani@gmail.com" 
-              className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
-            >
-              <Mail className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
-            </a>
-            <a 
-              href="https://www.instagram.com/0a_r.9?igsh=MWk5b3o5aWtyajZ3ZQ==" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
-            >
-              <Instagram className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
-            </a>
-            <a 
-              href="https://www.facebook.com/share/1A9i2gAigv/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-lg bg-card border border-border shadow-professional hover:shadow-accent hover:border-accent/30 transition-all duration-300 ease-out group"
-            >
-              <Facebook className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 ease-out" />
-            </a>
-          </div>
         </div>
 
         {/* Scroll indicator */}
