@@ -1,4 +1,5 @@
-import { Code2, Database, Smartphone, Globe, Award, Users } from "lucide-react";
+import { Code2, Database, Smartphone, Globe, Award, Users, Download } from "lucide-react";
+import { Button } from "./ui/button";
 
 const About = () => {
   const skills = [
@@ -12,6 +13,11 @@ const About = () => {
     { name: "Flutter", level: 82 },
     { name: "React", level: 87 },
     { name: "MySQL", level: 85 },
+    { name: "Oracle APEX", level: 88 },
+    { name: "PL/SQL & Oracle Database", level: 85 },
+    { name: "RESTful APIs", level: 90 },
+    { name: "Git & Version Control", level: 87 },
+    { name: "Problem Solving", level: 93 },
     { name: "System Analysis", level: 92 },
   ];
 
@@ -33,6 +39,16 @@ const About = () => {
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               مطور أنظمة شغوف بتحويل التحديات التقنية إلى حلول مبتكرة تساعد الأعمال على النمو والازدهار
             </p>
+            <Button 
+              className="mt-6 md:mt-8 shadow-elegant hover:shadow-glow transition-all duration-300"
+              size="lg"
+              asChild
+            >
+              <a href="/resume.pdf" download="CV.pdf" className="flex items-center gap-2">
+                <Download className="h-5 w-5" />
+                <span>تحميل السيرة الذاتية</span>
+              </a>
+            </Button>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 mb-12 md:mb-14 lg:mb-16">
