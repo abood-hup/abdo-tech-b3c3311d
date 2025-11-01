@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { ExternalLink, Database, Smartphone, Globe, Code, Calculator, Brain, BookOpen, Package, X } from 'lucide-react';
+import { ExternalLink, Database, Smartphone, Globe, Code, Calculator, Brain, BookOpen, Package, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import portfolioWarehouse from "@/assets/portfolio-warehouse.jpg";
 import portfolioUniversityPayment from "@/assets/portfolio-university-payment.jpg";
 import portfolioCompanyWebsite from "@/assets/portfolio-company-website.jpg";
@@ -11,16 +11,31 @@ import portfolioEmployeeSystem from "@/assets/portfolio-employee-system.jpg";
 import portfolioAccountingSystem from "@/assets/portfolio-accounting-system.jpg";
 import portfolioMedicalAI from "@/assets/portfolio-medical-ai.jpg";
 import portfolioNovelsWebsite from "@/assets/portfolio-novels-website.jpg";
-import demoWarehouse from "@/assets/demo-warehouse.jpg";
-import demoUniversityPayment from "@/assets/demo-university-payment.jpg";
-import demoCompanyWebsite from "@/assets/demo-company-website.jpg";
-import demoEmployeeSystem from "@/assets/demo-employee-system.jpg";
-import demoAccountingSystem from "@/assets/demo-accounting-system.jpg";
-import demoMedicalAI from "@/assets/demo-medical-ai.jpg";
-import demoNovelsWebsite from "@/assets/demo-novels-website.jpg";
+import demoWarehouse1 from "@/assets/demo-warehouse-1.jpg";
+import demoWarehouse2 from "@/assets/demo-warehouse-2.jpg";
+import demoWarehouse3 from "@/assets/demo-warehouse-3.jpg";
+import demoUniversity1 from "@/assets/demo-university-1.jpg";
+import demoUniversity2 from "@/assets/demo-university-2.jpg";
+import demoUniversity3 from "@/assets/demo-university-3.jpg";
+import demoCompany1 from "@/assets/demo-company-1.jpg";
+import demoCompany2 from "@/assets/demo-company-2.jpg";
+import demoCompany3 from "@/assets/demo-company-3.jpg";
+import demoEmployee1 from "@/assets/demo-employee-1.jpg";
+import demoEmployee2 from "@/assets/demo-employee-2.jpg";
+import demoEmployee3 from "@/assets/demo-employee-3.jpg";
+import demoAccounting1 from "@/assets/demo-accounting-1.jpg";
+import demoAccounting2 from "@/assets/demo-accounting-2.jpg";
+import demoAccounting3 from "@/assets/demo-accounting-3.jpg";
+import demoMedical1 from "@/assets/demo-medical-1.jpg";
+import demoMedical2 from "@/assets/demo-medical-2.jpg";
+import demoMedical3 from "@/assets/demo-medical-3.jpg";
+import demoNovels1 from "@/assets/demo-novels-1.jpg";
+import demoNovels2 from "@/assets/demo-novels-2.jpg";
+import demoNovels3 from "@/assets/demo-novels-3.jpg";
 
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const projects = [
     {
@@ -28,7 +43,7 @@ const Portfolio = () => {
       title: "نظام إدارة المخازن المتقدم",
       description: "نظام شامل لإدارة المخازن والمبيعات مع تتبع المخزون في الوقت الفعلي وتقارير مالية متقدمة",
       image: portfolioWarehouse,
-      demoImage: demoWarehouse,
+      demoImages: [demoWarehouse1, demoWarehouse2, demoWarehouse3],
       technologies: ["Java", "MySQL", "JavaFX"],
       category: "تطبيقات سطح المكتب",
       icon: Package
@@ -38,7 +53,7 @@ const Portfolio = () => {
       title: "تطبيق السداد الجامعي",
       description: "تطبيق جوال يستطيع الطالب من خلاله تسديد رسومه الجامعية بطريقة آمنة ومريحة",
       image: portfolioUniversityPayment,
-      demoImage: demoUniversityPayment,
+      demoImages: [demoUniversity1, demoUniversity2, demoUniversity3],
       technologies: ["Flutter", "PHP", "MySQL"],
       category: "تطبيقات الجوال",
       icon: Smartphone
@@ -48,7 +63,7 @@ const Portfolio = () => {
       title: "موقع للطلب أونلاين",
       description: "موقع ويب تفاعلي بالكامل للطلبات أونلاين مع لوحة إدارة متطورة ونظام إدارة المحتوى",
       image: portfolioCompanyWebsite,
-      demoImage: demoCompanyWebsite,
+      demoImages: [demoCompany1, demoCompany2, demoCompany3],
       technologies: ["HTML", "CSS", "JavaScript", "PHP"],
       category: "تطوير الويب",
       icon: Globe
@@ -58,7 +73,7 @@ const Portfolio = () => {
       title: "نظام إدارة الموظفين",
       description: "تطبيق ويب لإدارة الموظفين والحضور والانصراف مع تقارير الأداء",
       image: portfolioEmployeeSystem,
-      demoImage: demoEmployeeSystem,
+      demoImages: [demoEmployee1, demoEmployee2, demoEmployee3],
       technologies: ["C#", "ASP.NET", "SQL Server"],
       category: "تطبيقات الويب",
       icon: Database
@@ -68,7 +83,7 @@ const Portfolio = () => {
       title: "نظام محاسبي لإدارة الرسوم الجامعية",
       description: "نظام محاسبي شامل لإدارة الرسوم الجامعية للطلاب ومتابعة عمليات التسديد والتقارير المالية",
       image: portfolioAccountingSystem,
-      demoImage: demoAccountingSystem,
+      demoImages: [demoAccounting1, demoAccounting2, demoAccounting3],
       technologies: ["C#", "SQL Server", "Crystal Reports"],
       category: "تطبيقات سطح المكتب",
       icon: Calculator
@@ -78,7 +93,7 @@ const Portfolio = () => {
       title: "نظام ضبابي خبير طبي",
       description: "نظام ذكاء اصطناعي طبي متقدم يقوم بتشخيص الحالات المرضية بناءً على الأعراض وتقديم توصيات علاجية مناسبة",
       image: portfolioMedicalAI,
-      demoImage: demoMedicalAI,
+      demoImages: [demoMedical1, demoMedical2, demoMedical3],
       technologies: ["Python", "AI", "Machine Learning"],
       category: "الذكاء الاصطناعي",
       icon: Brain
@@ -88,7 +103,7 @@ const Portfolio = () => {
       title: "موقع روايات أدبية",
       description: "موقع ويب أنيق لعرض الروايات الأدبية الكلاسيكية لكبار الكتاب مثل فيودور ديستويفسكي وويليام شكسبير",
       image: portfolioNovelsWebsite,
-      demoImage: demoNovelsWebsite,
+      demoImages: [demoNovels1, demoNovels2, demoNovels3],
       technologies: ["HTML", "CSS", "JavaScript"],
       category: "تطوير الويب",
       icon: BookOpen
@@ -96,6 +111,32 @@ const Portfolio = () => {
   ];
 
   const currentProject = selectedProject ? projects.find(p => p.id === selectedProject) : null;
+  
+  const handlePreviousImage = () => {
+    if (currentProject) {
+      setCurrentImageIndex((prev) => 
+        prev === 0 ? currentProject.demoImages.length - 1 : prev - 1
+      );
+    }
+  };
+
+  const handleNextImage = () => {
+    if (currentProject) {
+      setCurrentImageIndex((prev) => 
+        prev === currentProject.demoImages.length - 1 ? 0 : prev + 1
+      );
+    }
+  };
+
+  const handleProjectSelect = (projectId: number) => {
+    setSelectedProject(projectId);
+    setCurrentImageIndex(0);
+  };
+
+  const handleCloseDialog = () => {
+    setSelectedProject(null);
+    setCurrentImageIndex(0);
+  };
 
   const categories = [
     { name: "الكل", count: projects.length },
@@ -181,7 +222,7 @@ const Portfolio = () => {
                   <Button 
                     size="sm" 
                     className="flex-1 bg-gradient-to-r from-accent to-accent/90 hover:from-accent/90 hover:to-accent shadow-accent group/btn" 
-                    onClick={() => setSelectedProject(project.id)}
+                    onClick={() => handleProjectSelect(project.id)}
                   >
                     <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     معاينة المشروع
@@ -213,8 +254,8 @@ const Portfolio = () => {
       </div>
 
       {/* Project Demo Dialog */}
-      <Dialog open={selectedProject !== null} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-5xl w-[95vw] h-[90vh] p-0 overflow-hidden">
+      <Dialog open={selectedProject !== null} onOpenChange={handleCloseDialog}>
+        <DialogContent className="max-w-6xl w-[95vw] h-[90vh] p-0 overflow-hidden">
           {currentProject && (
             <div className="h-full flex flex-col">
               <DialogHeader className="p-4 md:p-6 border-b bg-gradient-to-r from-accent/5 to-accent/10">
@@ -235,7 +276,7 @@ const Portfolio = () => {
                   <Button
                     variant="ghost"
                     size="icon"
-                    onClick={() => setSelectedProject(null)}
+                    onClick={handleCloseDialog}
                     className="hover:bg-accent/20"
                   >
                     <X className="w-5 h-5" />
@@ -245,14 +286,63 @@ const Portfolio = () => {
               
               <div className="flex-1 overflow-y-auto p-4 md:p-6 bg-muted/20">
                 <div className="space-y-4">
-                  <div className="rounded-lg overflow-hidden shadow-2xl border border-border/50">
-                    <img 
-                      src={currentProject.demoImage} 
-                      alt={`معاينة ${currentProject.title}`}
-                      className="w-full h-auto object-contain"
-                    />
+                  {/* Image Carousel */}
+                  <div className="relative rounded-lg overflow-hidden shadow-2xl border border-border/50 bg-background">
+                    <div className="relative group">
+                      <img 
+                        src={currentProject.demoImages[currentImageIndex]} 
+                        alt={`معاينة ${currentProject.title} - ${currentImageIndex + 1}`}
+                        className="w-full h-auto object-contain max-h-[60vh]"
+                      />
+                      
+                      {/* Navigation Arrows */}
+                      {currentProject.demoImages.length > 1 && (
+                        <>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={handlePreviousImage}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/95 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
+                          >
+                            <ChevronLeft className="w-6 h-6" />
+                          </Button>
+                          
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={handleNextImage}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/95 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
+                          >
+                            <ChevronRight className="w-6 h-6" />
+                          </Button>
+                        </>
+                      )}
+                    </div>
+                    
+                    {/* Image Counter & Dots */}
+                    {currentProject.demoImages.length > 1 && (
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                        <span className="text-sm font-medium">
+                          {currentImageIndex + 1} / {currentProject.demoImages.length}
+                        </span>
+                        <div className="flex gap-1.5 mr-2">
+                          {currentProject.demoImages.map((_, index) => (
+                            <button
+                              key={index}
+                              onClick={() => setCurrentImageIndex(index)}
+                              className={`w-2 h-2 rounded-full transition-all ${
+                                index === currentImageIndex 
+                                  ? 'bg-accent w-6' 
+                                  : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                   
+                  {/* Project Details */}
                   <div className="bg-card rounded-lg p-4 md:p-6 shadow-md border border-border/50">
                     <h3 className="text-base md:text-lg font-semibold mb-3 text-right">وصف المشروع</h3>
                     <p className="text-sm md:text-base text-muted-foreground text-right leading-relaxed mb-4">
