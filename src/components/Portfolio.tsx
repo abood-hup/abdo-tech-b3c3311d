@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Database, Smartphone, Globe, Code, Calculator, Brain, BookOpen, Package } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { ExternalLink, Database, Smartphone, Globe, Code, Calculator, Brain, BookOpen, Package, X } from 'lucide-react';
 import portfolioWarehouse from "@/assets/portfolio-warehouse.jpg";
 import portfolioUniversityPayment from "@/assets/portfolio-university-payment.jpg";
 import portfolioCompanyWebsite from "@/assets/portfolio-company-website.jpg";
@@ -10,80 +11,91 @@ import portfolioEmployeeSystem from "@/assets/portfolio-employee-system.jpg";
 import portfolioAccountingSystem from "@/assets/portfolio-accounting-system.jpg";
 import portfolioMedicalAI from "@/assets/portfolio-medical-ai.jpg";
 import portfolioNovelsWebsite from "@/assets/portfolio-novels-website.jpg";
+import demoWarehouse from "@/assets/demo-warehouse.jpg";
+import demoUniversityPayment from "@/assets/demo-university-payment.jpg";
+import demoCompanyWebsite from "@/assets/demo-company-website.jpg";
+import demoEmployeeSystem from "@/assets/demo-employee-system.jpg";
+import demoAccountingSystem from "@/assets/demo-accounting-system.jpg";
+import demoMedicalAI from "@/assets/demo-medical-ai.jpg";
+import demoNovelsWebsite from "@/assets/demo-novels-website.jpg";
 
 const Portfolio = () => {
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  
   const projects = [
     {
       id: 1,
       title: "نظام إدارة المخازن المتقدم",
       description: "نظام شامل لإدارة المخازن والمبيعات مع تتبع المخزون في الوقت الفعلي وتقارير مالية متقدمة",
       image: portfolioWarehouse,
+      demoImage: demoWarehouse,
       technologies: ["Java", "MySQL", "JavaFX"],
       category: "تطبيقات سطح المكتب",
-      icon: Package,
-      demoUrl: "#"
+      icon: Package
     },
     {
       id: 2,
       title: "تطبيق السداد الجامعي",
       description: "تطبيق جوال يستطيع الطالب من خلاله تسديد رسومه الجامعية بطريقة آمنة ومريحة",
       image: portfolioUniversityPayment,
+      demoImage: demoUniversityPayment,
       technologies: ["Flutter", "PHP", "MySQL"],
       category: "تطبيقات الجوال",
-      icon: Smartphone,
-      demoUrl: "#"
+      icon: Smartphone
     },
     {
       id: 3,
       title: "موقع للطلب أونلاين",
       description: "موقع ويب تفاعلي بالكامل للطلبات أونلاين مع لوحة إدارة متطورة ونظام إدارة المحتوى",
       image: portfolioCompanyWebsite,
+      demoImage: demoCompanyWebsite,
       technologies: ["HTML", "CSS", "JavaScript", "PHP"],
       category: "تطوير الويب",
-      icon: Globe,
-      demoUrl: "#"
+      icon: Globe
     },
     {
       id: 4,
       title: "نظام إدارة الموظفين",
       description: "تطبيق ويب لإدارة الموظفين والحضور والانصراف مع تقارير الأداء",
       image: portfolioEmployeeSystem,
+      demoImage: demoEmployeeSystem,
       technologies: ["C#", "ASP.NET", "SQL Server"],
       category: "تطبيقات الويب",
-      icon: Database,
-      demoUrl: "#"
+      icon: Database
     },
     {
       id: 5,
       title: "نظام محاسبي لإدارة الرسوم الجامعية",
       description: "نظام محاسبي شامل لإدارة الرسوم الجامعية للطلاب ومتابعة عمليات التسديد والتقارير المالية",
       image: portfolioAccountingSystem,
+      demoImage: demoAccountingSystem,
       technologies: ["C#", "SQL Server", "Crystal Reports"],
       category: "تطبيقات سطح المكتب",
-      icon: Calculator,
-      demoUrl: "#"
+      icon: Calculator
     },
     {
       id: 6,
       title: "نظام ضبابي خبير طبي",
       description: "نظام ذكاء اصطناعي طبي متقدم يقوم بتشخيص الحالات المرضية بناءً على الأعراض وتقديم توصيات علاجية مناسبة",
       image: portfolioMedicalAI,
+      demoImage: demoMedicalAI,
       technologies: ["Python", "AI", "Machine Learning"],
       category: "الذكاء الاصطناعي",
-      icon: Brain,
-      demoUrl: "#"
+      icon: Brain
     },
     {
       id: 7,
       title: "موقع روايات أدبية",
       description: "موقع ويب أنيق لعرض الروايات الأدبية الكلاسيكية لكبار الكتاب مثل فيودور ديستويفسكي وويليام شكسبير",
       image: portfolioNovelsWebsite,
+      demoImage: demoNovelsWebsite,
       technologies: ["HTML", "CSS", "JavaScript"],
       category: "تطوير الويب",
-      icon: BookOpen,
-      demoUrl: "#"
+      icon: BookOpen
     }
   ];
+
+  const currentProject = selectedProject ? projects.find(p => p.id === selectedProject) : null;
 
   const categories = [
     { name: "الكل", count: projects.length },
@@ -169,7 +181,7 @@ const Portfolio = () => {
                   <Button 
                     size="sm" 
                     className="flex-1 bg-gradient-to-r from-accent to-accent/90 hover:from-accent/90 hover:to-accent shadow-accent group/btn" 
-                    onClick={() => window.open(project.demoUrl, '_blank')}
+                    onClick={() => setSelectedProject(project.id)}
                   >
                     <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     معاينة المشروع
@@ -199,6 +211,73 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
+
+      {/* Project Demo Dialog */}
+      <Dialog open={selectedProject !== null} onOpenChange={() => setSelectedProject(null)}>
+        <DialogContent className="max-w-5xl w-[95vw] h-[90vh] p-0 overflow-hidden">
+          {currentProject && (
+            <div className="h-full flex flex-col">
+              <DialogHeader className="p-4 md:p-6 border-b bg-gradient-to-r from-accent/5 to-accent/10">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center">
+                      <currentProject.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                    </div>
+                    <div>
+                      <DialogTitle className="text-lg md:text-xl font-bold text-right">
+                        {currentProject.title}
+                      </DialogTitle>
+                      <Badge variant="secondary" className="mt-1 text-xs">
+                        {currentProject.category}
+                      </Badge>
+                    </div>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setSelectedProject(null)}
+                    className="hover:bg-accent/20"
+                  >
+                    <X className="w-5 h-5" />
+                  </Button>
+                </div>
+              </DialogHeader>
+              
+              <div className="flex-1 overflow-y-auto p-4 md:p-6 bg-muted/20">
+                <div className="space-y-4">
+                  <div className="rounded-lg overflow-hidden shadow-2xl border border-border/50">
+                    <img 
+                      src={currentProject.demoImage} 
+                      alt={`معاينة ${currentProject.title}`}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                  
+                  <div className="bg-card rounded-lg p-4 md:p-6 shadow-md border border-border/50">
+                    <h3 className="text-base md:text-lg font-semibold mb-3 text-right">وصف المشروع</h3>
+                    <p className="text-sm md:text-base text-muted-foreground text-right leading-relaxed mb-4">
+                      {currentProject.description}
+                    </p>
+                    
+                    <h3 className="text-base md:text-lg font-semibold mb-3 text-right">التقنيات المستخدمة</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {currentProject.technologies.map((tech, index) => (
+                        <Badge 
+                          key={index} 
+                          variant="outline" 
+                          className="text-xs md:text-sm px-3 py-1 bg-accent/5 border-accent/20 text-accent"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
